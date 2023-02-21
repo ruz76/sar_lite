@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="favicon.ico">
+  <title>Pátrač</title>
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body id="page-top">
+<!-- Navigation -->
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Menu</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo.svg" height="50" alt="Logo"></a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="hidden">
+          <a href="#page-top"></a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#intro">Úvod</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#guide">Plán</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#rizeni">Řízení</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#akce">Pátrací akce</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#psovodi">Psovodi</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#analyza">Analýza</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#settings">Nastavení</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#extra">Další</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#install">Instalace</a>
+        </li>
+        <li>
+          <a class="page-scroll" href="#support">Podpora</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+
+<section id="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Použití</h1>
+        <p>Výstupy vznikly v rámci projektu číslo VI20172020088 „Využití vyspělých technologií a čichových schopností psů pro zvýšení efektivity vyhledávání pohřešovaných osob v terénu“ (dále jen „projekt Pátrač“), který byl řešen v období 2017 až 2021 s finanční podporou Ministerstva vnitra ČR z programu bezpečnostního výzkumu.</p>
+        <h2>Základní ovládání</h2>
+        <p><img src="images/qgis.png"/></p>
+        <p>Aplikace je rozdělena do šesti částí. Na obrázku jsou označeny čísly</p>
+        <ol>
+          <li>Nabídka. Obsahuje možnosti jako je uložení projektu a konfiguraci.</li>
+          <li>Nástroje. K dispozici je základní sada nástrojů pro pohyb v mapě a manipulaci s objekty v mapě.</li>
+          <li>Panel vrstev. Umožňuje zobrazovat nebo skrývat vrstvy a jejich další konfiguraci.</li>
+          <li>Mapové pole. Obsahuje samotnou mapu.</li>
+          <li>Panel Pátrač. Základní funkce nástroje Pátrač.</li>
+          <li>Panel zpráv. Informace o průběhu zpracování, případně chyby.</li>
+        </ol>
+
+        <h3>Nástroje</h3>
+        <table>
+          <tr>
+            <td class="button">1</td>
+            <td class="button">2</td>
+            <td class="button">3</td>
+            <td class="button">4</td>
+            <td class="button">5</td>
+            <td class="button">6</td>
+            <td class="button">7</td>
+            <td class="button">8</td>
+            <td class="button">9</td>
+            <td class="button">10</td>
+            <td class="button">11</td>
+            <td class="button">12</td>
+            <td class="button">13</td>
+            <td class="button">14</td>
+            <td class="button">15</td>
+            <td class="button">16</td>
+            <td class="button">17</td>
+            <td class="button">18</td>
+            <td class="button">19</td>
+            <td class="button">20</td>
+            <td class="button">21</td>
+            <td class="button">22</td>
+            <td class="button">23</td>
+            <td class="button">24</td>
+            <td class="button">25</td>
+            <td class="button">26</td>
+          </tr>
+        </table>
+        <p><img src="images/toolbar.png"/></p>
+        <ol>
+          <li>Otevření panelu s průvodcem.</li>
+          <li>Otevření existujícího projektu.</li>
+          <li>Uložení aktuálního projektu.</li>
+          <li>Příprava a tisk mapy.</li>
+          <li>Posun mapy (Je možno také kolečkem myši - zmáčknu a táhnu).</li>
+          <li>Přiblížení mapy. (Je možno také kolečkem myši - točím od sebe).</li>
+          <li>Oddálení mapy. (Je možno také kolečkem myši - točím k sobě).</li>
+          <li>Přiblížení na rozsah celé vrstvy.</li>
+          <li>Přiblížení na rozsah vybraných objektů ve vrstvě.</li>
+          <li>Zobrazení informací o objektu (kliknutím do mapy).</li>
+          <li>Zobrazení informací o objektech v podobě tabulky.</li>
+          <li>Kalkulátor polí v tabulce (mohu hromadně měnit hodnoty pro více řádků).</li>
+          <li>Výběr objektu tažením obdélníku v mapě.</li>
+          <li>Zahájení a ukončení editace objektů v mapě.</li>
+          <li>Vložení objektu do vrstvy.</li>
+          <li>Posun objektu.</li>
+          <li>Smazání objektu.</li>
+          <li>Rozdělení objektu na dva.</li>
+          <li>Uložení editace.</li>
+          <li>Přečíslování sektorů.</li>
+          <li>Měření vzdáleností.</li>
+          <li>Měření ploch.</li>
+          <li>Přidání další rastrové vrstvy (např. letecký snímek).</li>
+          <li>Přidání další vektorové vrstvy (např. KML soubor).</li>
+          <li>Přidání vektorových vrstev pro dělení sektorů.</li>
+          <li>Rozdělení sektoru pomocí existující linie.</li>
+        </ol>
+
+        <p>Pokud vidíte další nástroje, znamená to, že máte zapnuty další nástrojové lišty.
+          Lišty můžete vypnout tak, že kliknete pravým tlačítkem myši vpravo vedle nástrojů nebo vedle nabídek.</p>
+
+        <h2>Zavedení zásuvného modulu</h2>
+        <p>Aplikace Quantum GIS by měla startovat s již zavedeným modulem.
+          Může se však stát, že dojde k vypnutí panelu nástrojů. Panel nástrojů se zapne přes nabídku Zásuvné moduly. </p>
+        <p><img src="images/load.png"/></p>
+
+        <h2>Použití zásuvného modulu</h2>
+        <p>V panelu modulu využijeme nejdříve <a href="#guide">Plán</a>. Ten mimo jiné pomůže vytvořit projekt pátrání.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="guide">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Plán</h1>
+        <p>Plán umožní zahájit pátrání, od zadání vstupů až po tisk mapy.</p>
+        <h2>Zadání místa</h2>
+        <p><img src="images/guide1.png"/></p>
+        <p>Z našeptávače se vybere obec (nebo část obce), kde bude pátrání probíhat. Našeptávač obsahuje aktuálně pouze obce a místní části z RÚIAN 2019. Po dohodě není žádný problém doplnit další prvky.
+          Případně můžete prvky doplnit sami, zvládne to i mírně pokročilý uživatel.</p>
+        <p>Uživatel musí zvolit typ pátrání (zda se jedná o ostré nasazení nebo o výuku nebo testování). Volitelně je vhodné vložit popis pátrání.</p>
+        <p>Generování projektu trvá poměrně dlouho, může se jednat o minutu nebo i dvě minuty. Výhodou jsou pak rychlejší výpočty v další fázi.</p>
+        <h2>Výběr typu osoby</h2>
+        <p><img src="images/guide2.png"/></p>
+        <p>Výběrem ze seznamu určíme typ osoby (dítě, osoba v depresi (sebevrah), osoba s alzhaimerem, apod.). V budoucnu mohou pribýt např. i údaje o kondici nebo znalosti terénu.</p>
+        <h2>Zadání míst posledního spatření</h2>
+        <p><img src="images/guide3.png"/></p>
+        <p>Kliknutím do mapy se zadávají místa posledního spatření.</p>
+        <p>V dialogu není nutno vyplnit žádné údaje. Pokud ale chcete využít funkci pracující se směrem pohybu je nutné zadat buď čas nebo zadat body v pořadí od nejstaršího po nejnovější.</p>
+        <p>Ke každému místu je možno v dialogovém okně zvolit čas od do a váhu, kterou určení přikládáme. Větší číslo = větší váha (0-9).
+          Hodnota 0 znamená vyloučení bodu z výpočtu. V případě zadání min. dvou bodů je výpočet ovlivněn i pravděpodobným směrem pohybu.
+          Identifikátor je možné mít pro přehlednost očíslovaný dle času spatření: 1 = nejstarší.
+        </p>
+
+        <h2>Omezení území</h2>
+        <p><img src="images/guide4.png"/></p>
+        <p>Vypočítaná pravděpodobnostní mapa je automaticky omezena na vhodná procenta. Zvýšením procenta se zvyšuje pravděpodobnost nálezu, ale také rozsah území, které je nutno propátrat. Procento
+          proto nedoporučujeme měnit, zejména v případě začínajících pátračů. </p>
+
+        <h2>Určení prostředků</h2>
+        <p><img src="images/guide5.png"/></p>
+        <p>V tomto okně je možno definovat, pokud je známe, počty prostředků. Výsledný report pak obsahuje i kalkulace doby pátrání.
+          Pomocí tlačítka Další prostředky můžete zadat i jiné než obvyklé prostředky (např. vrtulník nebo čtyřkolku).</p>
+        <h2>Zahájení pátrání</h2>
+        <p>Pátrání je možno začít. Soubory GPX jsou připraveny. Report je k dispozici. Pokud chceme mapu pro tisk, můžeme ji vygenerovat zaškrtnutím políčka (Vygenerovat PDF pro tisk) a generování
+          spustit zobrazením reportu.</p>
+        <p>Na tomoto okně je také možné přepnout zobrazení sektorů (více možností je pak na kartě Řízení).</p>
+        <p><img src="images/guide6.png"/></p>
+        <p><img src="images/sectors_export_report_output.png"/></p>
+
+        <h2>Změny plánu</h2>
+        <p>V průběhu pátrání může být potřeba provádět změny plánu. K tomu slouží karta Změny plánu.</p>
+        <p>První funkcí je rozšíření oblasti. Tuto funkci nedoporučuji používat, pokud k tomu není dobrý důvod.
+          Oblast projektu má rozměry cca 10x10 km a tedy by měla dostačovat. Může se však stát, že se pátrání posune mimo toto území.
+          Pokud je to posun úplně mimo (např. další vesnice), pak je lepší založit nový projekt pro novou oblast.
+          Rozšíření oblasti zvyšuje výpočetní nároky a doba výpočtu se značně zpomaluje.
+        </p>
+        <p>
+          Druhou funkcí je manipulace s místy spatření. Pomocí tohoto nástroje můžete např. přesunout bod na přesně dané souřadnice (v GPS, UTM, JTSK).
+        </p>
+        <p>
+          Třetí funkcí je přidání dalšího místa spatření.
+        </p>
+        <p>
+          Další funkcí je změna omezení území dle procent pravděpodobnosti.
+        </p>
+        <p>
+          Další funkcí je změna nastavení počtů sil a prostředků.
+        </p>
+        <p>
+          Při jakékoli změně, je nutné nechat vše přepočítat. Pokud máte na kartě 6 zatrženo generování PDF, počítejte s tím, že i ty se vypočítají znovu.
+        </p>
+        <p><img src="images/guide7.png"/></p>
+
+        <h2>Ukončení pátrání</h2>
+        <p>V případě nálezu osoby je velmi užitečné pro další pátrání evidovat informace o nálezu. K tomuto slouží tlačítko Zadat výsledek <img src="images/smile.png" alt="Zada výsledek"/>. Po
+          kliknutí na tlačítko je očekáváno od uživatele kliknutí
+          do mapy do místa nálezu. Po kliknutí do mapy se zobrazí okno pro zadání informací o nálezu. Pokud osoba nebyla nalezena, je přesto nutné kliknout někam do mapy a na okně zadat "Ukončeno bez
+          nálezu".</p>
+        <p><img src="images/found.png"/></p>
+        <p>Takto zaznamenaný nález bude následně využit k vylepšení stávající aplikace, zejména v oblasti predicke pravděpdobnosti výskytu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="rizeni">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Řízení</h1>
+        <p>Karta řízení umožňuje:</p>
+          <ul>
+          <li>
+            přepínat mezi základními pohledy na mapu,
+          </li>
+            <li>
+              zaznamenávat průběh pátrání,
+            </li>
+            <li>
+              exportovat sektory na GPS,
+            </li>
+            <li>
+              importovat stopy z GPS,
+            </li>
+            <li>
+              zobrazit pozice on-line,
+            </li>
+            <li>
+              zobrazit stopy on-line,
+            </li>
+          </ul>
+        <p><img src="images/rizeni.png"/></p>
+        <h2>Přepínání pohledů</h2>
+        <p>K přepínání pohledů slouží pět prvních tlačítek</p>
+        <p>
+          <img src="images/zobrazeni.png" alt="Tlačítka pro zobrazení"/>
+        </p>
+        <ul>
+          <li><p>Sektory dle doporučených prostředků barevně odliší sektory dle prostředků, které jsou doporučeny pro daný typ povrchu.
+            Zelenou barvou je zobrazena rojnice (nebo jednotlivci/skupiny bez psa), hnědou barvou psovod, žlutou vrtulník (dron), modrou potápěč,
+            růžovou pak ostatní sektory, kde nemáme doporučení.</p>
+            <p>
+              <img src="images/style_rec_units.png" alt="Doporučené prostředky legenda"/>
+            </p>
+          </li>
+          <li>
+            <p>Sektory dle použitých prostředků odliší sektory dle prostředků použitých pro pátrání. Sektory bez výplně nemají přiřazen žádný prostředek (výchozí stav).</p>
+            <p>
+              <img src="images/style_units.png" alt="Použité prostředky legenda"/>
+            </p>
+          </li>
+          <li>
+            <p>Sektory dle typu barevně odliší typy povrchů, jakou jsou les, louka, intravilán, apod.</p>
+            <p>
+              <img src="images/style_unique.png" alt="Typy povrchů legenda"/>
+            </p>
+          </li>
+
+          <li>
+            <p>Sektory dle stavu barevně odliší sektory dle stavu pátrání, tedy zda již bylo pátrání zahájeno, případně dokončeno.
+              Červeně nezahájeno (nebo nutné opakovat), zeleně dokončeno, žlutě probíhá, bez barvy - bez udání stavu.
+            </p>
+            <p>
+              <img src="images/style_stav.png" alt="Stav legenda"/>
+            </p>
+          </li>
+          <li><p>Odbarvit sektory odstraní barvu pro sektory.</p></li>
+        </ul>
+        <p>Zaškrtávací tlačítko Zobrazit popisky sektorů ovládá zobrazení popisků pro sektory.</p>
+        <p>Do barev se promítá podkladová Základní policejní mapa, to může někdy působit zmatky v interpretaci mapy.
+          Pokud s tímto máte problém, můžete si Základní policejní mapu vypnout v seznamu vrstev.</p>
+
+        <h2>Tisk map</h2>
+        <p>Pro tisk je možné využít poslední dvě tlačítka v první řadě.</p>
+        <p>
+          <img src="images/print_tools.png" alt="Tlačítka pro tisk"/>
+        </p>
+        <p>První pouze zobrazí report vytvořený v rámci plánování. Pokud obsahuje mapy, pak jsou součástí.</p>
+        <p>Druhé spustí správce tisku, kde je možné vytvořit vlastní kompozici nebo modifikovat existující.</p>
+
+        <h2>Stav pátrání</h2>
+        <p>Stav pátrání se nastavuje pomocí přepínacích tlačítek uprostřed okna.</p>
+        <p>
+          <img src="images/prubeh.png" alt="Tlačítka pro průběh"/>
+        </p>
+        <p>Nastavuje se stav pátrání v sektoru. Vybereme stav, případně typ prostředku. Pak klikneme do sektoru, u kterého chceme změnit stav.</p>
+
+        <h2>GPS</h2>
+        <p>K práci s GPS slouží dvě tlačíka ve spodní části okna.</p>
+        <p>
+          <img src="images/gps.png" alt="Tlačítka pro průběh"/>
+        </p>
+        <p>První slouží k nahrání sektorů na připojenou GPS.</p>
+        <p>Druhé slouží k nahrání stop z připojené GPS. Funkce aktuálně podporuje pouze nové přijímače, které připojují GPS jako USB zařízení. Do budoucna se
+          nepředpokládá podpora starších zařízení.</p>
+        <p>Import dat je možný buď výběrem stop ze seznamu všech stop nebo ořezáním stop dle zadaného časového okna.</p>
+
+        <h2>On-line pozice</h2>
+        <p>Pomocí tlačítka <img src="images/patraci_points.png"/> je možné zobrazit poslední pozice pátračů, kteří jsou připojeni on-line. Tato funkce vyžaduje připojení k internetu.</p>
+        <p>Po zmáčknutí tlačítka je vrstva patraci aktualizována daty ze serveru. Zelenou ikonou jsou zobrazeni aktivní pátrači (log v posledních 5-ti minutách), bílou ikonou jsou zobrazeni neaktivní
+          pátrači.</p>
+
+        <h2>On-line stopy</h2>
+        <p>Pomocí tlačítka <img src="images/patraci_lines.png"/> je možné zobrazit stopy pátračů, kteří jsou připojeni on-line. Tato funkce vyžaduje připojení k internetu.</p>
+        <p>Po zmáčknutí tlačítka je vrstva patraci_lines aktualizována daty ze serveru.</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="akce">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Pátrací akce</h1>
+        <p>Karta Pátrací akce umožňuje nastavit údaje pro pátrací akci. Tyto je nutné nastavit pokud chcete svolávat atestované psovody.</p>
+        <p><img src="images/akce.png"/></p>
+        <p>První položka se týká pohřešované osoby. Ta má samostatný dialog.</p>
+        <p><img src="images/person.png"/></p>
+        <p>Další položky se týkají kontaktů na velitele zásahu a místa setkání.</p>
+        <p>Místa setkání je buď možno popsat slovně, nebo pomocí tlačítka a následného kliknutí v mapě vložit GPS souřadnice do popisu.</p>
+        <p>Údaje je nutno zapsat pomocí tlačítka Aktualizovat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="analyza">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Analýza</h1>
+        <p>Karta Analýza umožňuje analýzu propátrání.</p>
+        <p><img src="images/analyza.png"/></p>
+        <p>V seznamu vrstev vybereme stopu pátrače, vybereme typ pátrače ze seznamu a pak klikneme do sektoru a dostaneme výsledek, který může ukázat místa, která nebyla pravděpodobně propátrána.</p>
+        <p><img src="images/propatrani.png"/></p>
+        <p>Světlá tečkovaná místa v sektoru QC82 zobrazují místa, kde mohlo na základě analýzy stopy pátrače, nedojít k propátrání.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="psovodi">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Psovodi</h1>
+        <p>Okno se vyvolá talčítkem ve spodní části panelu Pátrač</p>
+        <p><img src="images/psovodi.png"/></p>
+        <p>Okno Psovodi je nový způsob svolávání. Vyžaduje od psovodů instalaci aplikace HS Messenger a pro operátora přístup do systému Horské služby, která systém provozuje.</p>
+        <p><img src="images/psovodi_hs.png"/></p>
+        <p>Tlačítko Zobrazit psovody v pohotovosti dle vzdálenosti zobrazí seznam všech psovodů k dispozici.</p>
+        <p><img src="images/psovodi_hs2.png"/></p>
+        <p>Zobrazené psovody je možno vybrat zaškrtnutím a následně pomocí tlačítka Vyzvat psovody vyzvat k akci. Psovodům začne telefon houkat a mohou reagovat na výzvu.</p>
+        <p>Psovody je možno vyzvat opakovaně.</p>
+        <p>Tlačítko Zobrazit psovody zařazené do pátrací akce zobrazí psovody, kteří byli do akce zařazeni i s jejich stavem (tedy zda potvrdili nebo nepotvrdili účast).</p>
+        <p>Pokud svolání končí chybou, že není dostupný Access Key, pak může ve vaší aplikaci chybět. Ten získáte kontaktováním Horské služby a vložíte v okně Nastavení celé aplikace (popsáno dále).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="settings">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Nastavení</h1>
+        <p>Aplikace má celou řadu nastavení. Nastavení se zobrazí pomocí ikony <img src="images/settings.png"/> ve spodní části panelu pátrač.</p>
+
+        <h2>Vzdálenost</h2>
+        <p>Karta Vzdálenost obsahuje tabulky výše popsaných studií. Řádky představují typ osoby. Sloupce pak vzdálenosti (v metrech) do kterých bylo určité procento pohřešovaných nalezeno.</p>
+        <p><img src="images/distance.png"/></p>
+        <p>Tabulku na kartě Vlastní je možno editovat a nastavit tak vzdálenosti dle jiné studie, nebo vlastních zkušeností.</p>
+        <p>V přípravě je studie pro ČR. Jakmile bude zpracována, bude do aplikace doplněna.</p>
+
+        <h2>Tření</h2>
+        <p>Karta Tření obsahuje popis parametrů aktuálně používaného algoritmu pro třecí povrch. Třecí povrch vychází z digitálního modelu térénu a typů povrchu. Pro každý typ povrchu je určena
+          obtížnost pohybu resp. náklady na překonání určité vzdálenosti (aktuálně se jedná o čas na překonání 10 m). Např. pro silnice je tření (náklady) nižší než pro pole, a tedy pohyb rychlejší.
+          Podobně pohyb do kopce je pomalejší než po rovině. Pokud je u nákladu uvedena hodnota null, znamené to, že není možno daným prostorem se pohybovat a jedná se o neprostupnou překážku (např.
+          vodní plocha, oplocenka, vojenská základna).</p>
+        <p><img src="images/cost.png"/></p>
+
+        <h2>Metody a volby</h2>
+        <p><img src="images/methods.png"/></p>
+        <p>V rozbalovacím seznamu Vzdálenost je možno vybrat studii pro určování vzdálenosti výskytu. K dispozici jsou tři studie</p>
+        <ul>
+          <li>LSOM - Australská studie.</li>
+          <li>Hill - Americká studie.</li>
+          <li>UK - Britská studie.</li>
+          <li>Vlastní - Možnost vlastních dat.</li>
+        </ul>
+
+        <p>V rozbalovacím seznamu Tření je možno vybrat třecí povrch. Aktuálně je však pouze jeden k dispozici a není možno zadat vlastní.</p>
+
+        <p>Zaškrtávací políčko Pracovat se směrem pohybu určuje zda v případě dvou a více bodů počítat se směrem pohybu osoby. Pokud je tlačítko zaškrtnuto počítá se z bodů směr pohybu a ovlivňuje se
+          tím výsledná pravděpodobnostní mapa. Následující obrázky ukazují rozdíl. První používá směr pohybu a druhý jej nepoužívá. </p>
+        <p><img src="images/radial.png"/></p>
+        <p><img src="images/noradial.png"/></p>
+
+        <p>Položka Zahrnout body s váhou větší než ? umožňuje filtrovat body pro výpočet. Implicitně (hodnota 0) jsou všechny body s váhou = 0 odstraněny z výpočtu. Např. body, ke kterým nemáme
+          důvěru, protože svědci si odporují.</p>
+
+        <p>Identifikátor pátrání slouží k doplňkovm funkcím pro sledování pátračů v reálném čase. Tento identifikátor musí mít ve svých aplikacích pro mobilní teleofny všichni pátrači stejný.</p>
+
+        <p>Cesta k projektu ukazuje kam se ukládají všechna data. Tedy např. i GPX soubory pro GPS přijímače.</p>
+
+        <h2>Pátrači ha</h2>
+        <p>Karta Pátračí ha umožňuje nstavit rychlost pátrání pro druhy pátracích prostředků a terén.</p>
+        <p><img src="images/patraci_ha.png"/></p>
+
+        <h2>HS Messenger</h2>
+        <p>Na kartě je možno nastavit přístupový kód k systému Horské služby (pokud jej nemáte, kontaktujte Horskou službu).</p>
+        <p><img src="images/hsmessenger.png"/></p>
+        <p>Dále je zde možné, a pro svolávání psovodů nutné, nastavit e-mailové adresy.</p>
+        <p>První adresa je adresa, která bude uvedena u odesílatele seznamu psovodů zařazených do akce. Vyplňte tedy svoji služební adresu.</p>
+        <p>Druhá je adresa na KOPIS, pod který spadáte.</p>
+        <p>Třetí je další adresa, kam by měl seznam odejít (např. operační středisko).</p>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="extra">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+
+        <h1>Další funkce</h1>
+        <p>Aplikace má celou řadu dalších funkcí.</p>
+
+<!--        <h2>Zaslání zprávy</h2>-->
+<!--        <p>Pomocí tlačítka <img src="images/message.png"/> je možné pátračům, kteří jsou připojeni on-line zaslat zprávu. Tato funkce vyžaduje připojení k internetu.</p>-->
+<!--        <p><img src="images/chat.png"/></p>-->
+
+        <h2>Zadání bodů</h2>
+        <p>Pomocí tlačítka <img src="images/places.png"/> je možné upravovat body pozorování.</p>
+        <p><img src="images/places_dialog.png"/></p>
+        <p>Vybraný bod je možné přesunout na souřadnice.</p>
+        <p>Místa zadaná liniemi je možno převést na body.</p>
+        <p>Místa zadaná plochami je možno převést na body.</p>
+
+        <h2>Úprava sektorů</h2>
+        <h3>Spojování</h3>
+        <p>Častou operací bude spojování menších sektorů do jednoho většího. Po diskusích byla takto funkce odstraněna a je doporučeno pátračům přidělit více sektorů.</p>
+        <!--
+        <ul>
+          <li>Pomocí nástroje <img src="images/edit.png"/> zahájíme editaci.</li>
+          <li>Pomocí nástroje <img src="images/select.png"/> a držení klávesy CTRL klikáme do sektorů. Ty se označují žlutou barvou.</li>
+          <li>Jakmile máme vybrány všechny sektory, které chceme spojit, zmáčkneme tlačítko <img src="images/join.png"/>.</li>
+          <li>Objeví se dialogové okno <br/><img src="images/join2.png"/>, kde pouze pomocí tlačítka OK (Budiž) potvrdíme sloučení.</li>
+          <li>Takto můžeme dále pokračovat s ostatními sektory.</li>
+          <li>Pomocí nástroje <img src="images/edit.png"/> ukončíme editaci. Na výzvu k uložení dáme Ano (OK, Budiž).</li>
+          <li>Pomocí nástroje <img src="images/recalculate.png"/> v panelu Pátrač provedeme přečíslování sektorů.</li>
+        </ul>
+        -->
+
+        <h3>Rozdělování</h3>
+        <p>Někdy bude nutné velký sektor rozdělit. Nejedná se o triviální operaci, proto pokud nemusíte, tak to nedělejte. Vhodný postup je následující:</p>
+        <ul>
+          <li>Pomocí nástroje <img src="images/edit.png"/> zahájíme editaci.</li>
+          <li>Pomocí nástroje <img src="images/split.png"/> můžeme zahájit kreslení linie, kterou rozdělíme sektor. Kreslení linie probíhá pomocí levého tlačítka myši a ukončuje se pomocí pravého
+            tlačítka myši. Po dokončení se sektor rozdělí nicméně informace o rozloze (ha) i název sektoru zůstane do doby přečíslování stejná jako u původního sektoru pro všechny nově vzniklé
+            sektory.
+          </li>
+          <li>Pomocí nástroje <img src="images/edit.png"/> ukončíme editaci. Na výzvu k uložení dáme Ano (OK, Budiž).</li>
+          <li>Pomocí nástroje <img src="images/recalculate.png"/> v toolbaru Pátrač nebo panelu Pátrač provedeme přečíslování sektorů.</li>
+        </ul>
+
+        <h3>Rozdělování pomocí existujících linií</h3>
+        <p>Ve verzi 3.12.20 přibyla funkce navržená na školení v Praze (24.9.2020) a to dělení pomocí existující linie.
+          Pro dělení je možné vuižít např. stopu. Pokud např. předtím prošel někdo dělící linii s GPS přijímačem.</p>
+        <p>Dále je možno využít existujících vrstev vodních toků, cest a průseků.</p>
+        <ul>
+          <li>Pomocí nástroje <img src="images/add_vectors_for_split_by_line.png"/> přidáme vrstvy do mapy.
+            Může se stát, že se některá z vrstev nenačte, pak musíme pracovat jen s těmi co se načetly.
+          </li>
+          <li>Pomocí nástroje <img src="images/select.png"/> vybereme nejdříve sektor.
+            Následně se přepneme na vrstvu (vodní tok, cesta, průsek), ze které vybereme jeden prvek.
+          </li>
+          <li>Pomocí nástroje <img src="images/split_by_line.png"/> rozdělíme sektor.
+            Vybraná linie se prodlouží a tím protne sektor a rozdělí jej.
+          </li>
+        </ul>
+        <p>Funkce je zatím hodmě experimentální, ale často funguje dobře.</p>
+
+        <h3>Export PDF pro jednotlivé sektory</h3>
+        <p>Pomocí nástroje <img src="images/print.png"/> otevřeme správce tisku.</p>
+        <p>Uděláme kopii rozvržení Basic <img src="images/print_copy.png"/>.</p>
+        <p>V položkách vybereme Mapa 1. A v menu Atlas zvolíme Nastavení atlasu.
+        </p>
+        <p><img src="images/print_set_atlas1.png"/></p>
+        <p>V nastavení zvolíme vrstvu pokrytí sektory.
+        </p>
+        <p>Volitelně můžeme zvolit název strany a řazení.
+        <p><img src="images/print_set_atlas2.png"/></p>
+        <p>Na kartě Vlastnosti položky volíme Ovládáno Atlas
+        </p>
+        <p><img src="images/print_set_atlas3.png"/></p>
+        <p>Přes nabídku Atlas volíme Exportovat do PDF. Vznikne PDF s tolika stranami, kolik máme sektorů.
+        </p>
+        <p><img src="images/print_set_atlas4.png"/></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Instalace</h1>
+        <p>Podrobně popsána <a href="http://sarops.info/patrac/qgis3/install/" target="_blank">zde</a></p>
+        <!--
+        <h2>Instalace aplikace</h2>
+        <p>Instalace je možná několika způsoby.</p>
+        <ul>
+          <li>Pomocí instalátoru install.bat</p>
+          <li>Zkopírováním souborů na správná místa.</li>
+        </ul>
+        <p>Pokud jste instalaci ještě neprováděli a na počítači nemáte nainstalován nástroj OSGeo4W, je vhodné použít instalátor.</p>
+        <p>Pokud jste instalaci v minulosti provedli pomocí instlátoru install.bat, je vhodné použít instalátor, který provede aktualizaci.</p>
+        <p>Pokud máte na počítači nainstalován OSGeo4W, pak je nutná ruční instalace. Obraťe se na podporu.</p>
+        <p>Pokud chcete instalovat do OS Linux, obraťte se na podporu. Podpora OS Linux miluje, takže přijede i na konec republiky.</p>
+
+        <h2>Instalace databáze</h2>
+        <p>Důležité je, že aplikace nedokáže pracovat bez dobře nastavené databáze.</p>
+        <p>K aplikaci je tedy nutné instalovat navíc databázi. Databázi je možné instalovat pomocí nastavení aplikace (pozn. funkce je v přípravě).</p>
+
+        <h2>Ověření instalace</h2>
+        <p>Pokud se jednalo o novou instalaci mělo by být vše v pořádku.</p>
+
+        <p>Pokud jste prováděli reinstalaci, vyzkoušejte nejdříve zda vše funguje dle očekávání.
+          V případě problémů nemažte prosím instalační adresář, který obsahuje zálohu předchozí verze a obraťte se na podporu.</p>
+
+        <h1>Spuštění aplikace</h1>
+        <p>Aplikaci spustíte pomocí ikony na ploše.
+          Spustí se program Quantum GIS.</p>
+        <p><img src="images/start.png"/></p>
+        <p>Pokud z jakéhokoli důvodu není na ploše ikona Pátrač. Můžete zkusit aplikaci spustit poklikáním v průzkumníkovi na soubor C:\OSGeo4W64\bin\qgis.bat</p>
+        <p>Pokud daný soubor neexistuje obraťte se na podporu, protože se něco úplně podělalo.</p>
+        -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="support">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-left">
+        <h1>Podpora</h1>
+        <p>Aplikace vznikla v rámci projektu Pátrač.</p>
+        <p>S důvěrou se obraťte na autora, který má zájem aby se aplikace dále rozvíjela.</p>
+        <p>Pokud máte akutní problém, můžete použít telefon.</p>
+        <p>Pokud máte problém, který není akutní použijte prosím e-mail nebo issue tracker.</p>
+        <p>Jan Růžička<br/>
+          jan.ruzicka.vsb@gmail.com nebo 775 032 091<br/>
+          Issue tracker: <a href="https://github.com/ruz76/qgis_patrac_3/issues">https://github.com/ruz76/qgis_patrac_3/issues</a>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<p id="back-top">
+  <a href="#top"><i class="fa fa-angle-up"></i></a>
+</p>
+<footer>
+  <div class="container text-center">
+    <p>Designed by <a href="http://moozthemes.com"><span>MOOZ</span>Themes.com</a></p>
+  </div>
+  <div>Icons made by <a href="https://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed
+    by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+  </div>
+</footer>
+
+<script src="js/bootstrap.min.js"></script>
+<script src="js/SmoothScroll.js"></script>
+<script src="js/theme-scripts.js"></script>
+
+</body>
+</html>
