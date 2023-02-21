@@ -103,8 +103,8 @@ class PatracPlugin(object):
 
         # self.qgsVersion = str(QGis.QGIS_VERSION_INT)
 
-        userPluginPath = QFileInfo(QgsApplication.qgisUserDatabaseFilePath()).path() + "/python/plugins/qgis_patrac_lite"
-        systemPluginPath = QgsApplication.prefixPath() + "/python/plugins/qgis_patrac_lite"
+        userPluginPath = QFileInfo(QgsApplication.qgisUserDatabaseFilePath()).path() + "/python/plugins/sar_lite"
+        systemPluginPath = QgsApplication.prefixPath() + "/python/plugins/sar_lite"
 
         overrideLocale = bool(QSettings().value("locale/overrideFlag", False))
         if not overrideLocale:
