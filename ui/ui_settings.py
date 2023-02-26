@@ -44,6 +44,8 @@ import requests, json
 from ..connect.connect import *
 from string import ascii_uppercase
 import urllib3
+from shutil import copy
+import processing
 
 # import qrcode
 
@@ -168,19 +170,73 @@ class Ui_Settings(QtWidgets.QDialog, FORM_CLASS):
             except:
                 QMessageBox.information(None, self.tr("ERROR"), self.tr("Can not connect to the server"))
 
+    def fixSectorsGeometries(self, inputPath, outputPath):
+        processing.run("native:fixgeometries", {'INPUT':inputPath,'OUTPUT':outputPath})
+
+    def fixSectorsLayer(self):
+        if sys.platform.startswith('win'):
+            vectorDir = self.drive + ":/patracdata/kraje/" + self.comboBoxDataFix.currentText() + "/vektor/ZABAGED/line_x"
+        else:
+            vectorDir = self.drive + "/patracdata/kraje/" + self.comboBoxDataFix.currentText() + "/vektor/ZABAGED/line_x"
+        fixedSectorsPath = vectorDir + "/merged_polygons_groupped_fixed.shp"
+
+        if not os.path.exists(fixedSectorsPath):
+            copy(self.pluginPath + "/templates/vektor/ZABAGED/merged_polygons_groupped_fixed.shp", vectorDir + "/merged_polygons_groupped_pom.shp")
+            copy(self.pluginPath + "/templates/vektor/ZABAGED/merged_polygons_groupped_fixed.shx", vectorDir + "/merged_polygons_groupped_pom.shx")
+            copy(self.pluginPath + "/templates/vektor/ZABAGED/merged_polygons_groupped_fixed.dbf", vectorDir + "/merged_polygons_groupped_pom.dbf")
+            with open(vectorDir + "/merged_polygons_groupped_pom.cpg", "w") as cpg:
+                cpg.write("UTF-8")
+            with open(vectorDir + "/merged_polygons_groupped_pom.prj", "w") as prj:
+                prj.write('PROJCS["S-JTSK_Krovak_East_North",GEOGCS["GCS_S_JTSK",DATUM["D_S_JTSK",SPHEROID["Bessel_1841",6377397.155,299.1528128]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Krovak"],PARAMETER["False_Easting",0.0],PARAMETER["False_Northing",0.0],PARAMETER["Pseudo_Standard_Parallel_1",78.5],PARAMETER["Scale_Factor",0.9999],PARAMETER["Azimuth",30.2881397527778],PARAMETER["Longitude_Of_Center",24.8333333333333],PARAMETER["Latitude_Of_Center",49.5],PARAMETER["X_Scale",-1.0],PARAMETER["Y_Scale",1.0],PARAMETER["XY_Plane_Rotation",90.0],UNIT["Meter",1.0]]')
+
+        vector = QgsVectorLayer(vectorDir + "/merged_polygons_groupped.shp", "sectors", "ogr")
+        vectorOutput = QgsVectorLayer(vectorDir + "/merged_polygons_groupped_pom.shp", "sectors", "ogr")
+        if vector.isValid() and vectorOutput.isValid():
+            # Strange this one is not working
+            # Adding fields is working, but when trying to update the feature it starts infinite loop
+            # The features iterator is extended with updated feature
+            # So workaround
+            # vector.startEditing()
+            # stavField = QgsField('stav', QVariant.Int)
+            # prostredkyField = QgsField('prostredky', QVariant.String, 'varchar', 254)
+            # areaField = QgsField('area_ha', QVariant.Double)
+            # labelField = QgsField('label', QVariant.String, 'varchar', 50)
+            # poznamkaField = QgsField('poznamka', QVariant.String, 'varchar', 254)
+            # odField = QgsField('od_cas', QVariant.String, 'varchar', 50)
+            # doField = QgsField('do_cas', QVariant.String, 'varchar', 50)
+            # vector.dataProvider().addAttributes([stavField, prostredkyField, areaField, labelField, poznamkaField, odField, doField])
+            # vector.updateFields()
+            # vector.commitChanges()
+            #
+            # vector = QgsVectorLayer(vectorDir + "/merged_polygons_groupped_fixed.shp", "sectors", "ogr")
+            vectorOutput.startEditing()
+            features = vector.getFeatures()
+            for feature in features:
+                fet = QgsFeature()
+                fet.setAttributes([feature['id'], feature['typ'], None, None, round(feature.geometry().area() / 10000), feature['id'], None, None, None])
+                fet.setGeometry(feature.geometry())
+                # feature.setAttribute('label', feature['id'])
+                # feature.setAttribute('area_ha', round(feature.geometry().area() / 10000))
+                # print(feature['id'])
+                vectorOutput.addFeatures([fet])
+            vectorOutput.commitChanges()
+            self.fixSectorsGeometries(vectorDir + "/merged_polygons_groupped_pom.shp", vectorDir + "/merged_polygons_groupped_fixed.shp")
+
     def fixData(self):
         self.parent.setCursor(Qt.WaitCursor)
         self.setCursor(Qt.WaitCursor)
 
         if sys.platform.startswith('win'):
             self.downloadStats()
-            p = subprocess.Popen((self.pluginPath + "/grass/run_fix_datastore.bat", self.drive + ":/patracdata/kraje/" + self.comboBoxDataFix.currentText(), self.pluginPath))
-            p.wait()
-            QMessageBox.information(None, self.tr("Fixed"), self.tr("The datastore has been fixed"))
+            self.fixSectorsLayer()
+            # p = subprocess.Popen((self.pluginPath + "/grass/run_fix_datastore.bat", self.drive + ":/patracdata/kraje/" + self.comboBoxDataFix.currentText(), self.pluginPath))
+            # p.wait()
         else:
             # self.downloadStats()
-            QMessageBox.information(None, self.tr("Not available"), self.tr("The function is not implemented"))
+            self.drive = "/data"
+            self.fixSectorsLayer()
 
+        QMessageBox.information(None, self.tr("Fixed"), self.tr("The datastore has been fixed"))
         self.setCursor(Qt.ArrowCursor)
         self.parent.setCursor(Qt.ArrowCursor)
 

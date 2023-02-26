@@ -168,10 +168,10 @@ class Project(object):
 
         regionOut = None
         QgsMessageLog.logMessage("Region: " + region, "Patrac")
-        if os.path.isfile(DATAPATH + '/../../../kraje/' + region + '/vektor/OSM/line_x/merged_polygons_groupped.shp'):
+        if os.path.isfile(DATAPATH + '/../../../kraje/' + region + '/vektor/OSM/line_x/merged_polygons_groupped_fixed.shp'):
             regionOut = region
         if os.path.isfile(
-                DATAPATH + '/../../../kraje/' + region + '/vektor/ZABAGED/line_x/merged_polygons_groupped.shp'):
+                DATAPATH + '/../../../kraje/' + region + '/vektor/ZABAGED/line_x/merged_polygons_groupped_fixed.shp'):
             regionOut = region
 
         return regionOut

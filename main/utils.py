@@ -118,7 +118,7 @@ class Utils(object):
         copy(DATAPATH + "/sektory/shp/template.shp", DATAPATH + "/sektory/shp/" + name + ".shp")
         copy(DATAPATH + "/sektory/shp/template.shx", DATAPATH + "/sektory/shp/" + name + ".shx")
         copy(DATAPATH + "/sektory/shp/template.dbf", DATAPATH + "/sektory/shp/" + name + ".dbf")
-        # copy(DATAPATH + "/sektory/shp/template.prj", DATAPATH + "/sektory/shp/" + name + ".prj")
+        copy(DATAPATH + "/sektory/shp/template.prj", DATAPATH + "/sektory/shp/" + name + ".prj")
         copy(DATAPATH + "/sektory/shp/template.qml", DATAPATH + "/sektory/shp/" + name + ".qml")
         # copy(DATAPATH + "/sektory/shp/template.qpj", DATAPATH + "/sektory/shp/" + name + ".qpj")
 
@@ -266,8 +266,9 @@ class Utils(object):
             "sectors_type": 0
         }
 
-        with open(self.getDataPath() + "/pracovni/project.json", 'w') as outfile:
-            json.dump(project_info, outfile)
+        if os.path.exists(self.getDataPath()):
+            with open(self.getDataPath() + "/pracovni/project.json", 'w') as outfile:
+                json.dump(project_info, outfile)
 
     def getProjectInfo(self):
         if os.path.exists(self.getDataPath() + "/pracovni/project.json"):
